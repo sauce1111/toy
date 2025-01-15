@@ -1,29 +1,29 @@
 package com.toy.sspark.web;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(IndexController.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class IndexControllerTest {
 
     @Autowired
-    private MockMvc mvc;
+    private TestRestTemplate restTemplate;
 
     @Test
-    public void testIndex() throws Exception {
-        String index = "index page!";
+    @DisplayName("메인페이지를 로딩한다.")
+    public void testIndex() {
+        // when
+        String body = this.restTemplate.getForObject("/", String.class);
 
-        mvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(index));
+        // then
+        assertThat(body).contains("게시판 웹서비스");
     }
 }

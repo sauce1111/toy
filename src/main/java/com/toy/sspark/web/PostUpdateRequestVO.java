@@ -1,4 +1,4 @@
-package com.toy.sspark.web.post;
+package com.toy.sspark.web;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.toy.sspark.web.post;
+package com.toy.sspark.web;
 
 import com.toy.sspark.service.post.PostService;
 import lombok.RequiredArgsConstructor;

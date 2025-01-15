@@ -2,9 +2,9 @@ package com.toy.sspark.service.post;
 
 import com.toy.sspark.domain.post.Post;
 import com.toy.sspark.domain.post.PostRepository;
-import com.toy.sspark.web.post.PostResponseVO;
-import com.toy.sspark.web.post.PostSaveRequestVO;
-import com.toy.sspark.web.post.PostUpdateRequestVO;
+import com.toy.sspark.web.PostResponseVO;
+import com.toy.sspark.web.PostSaveRequestVO;
+import com.toy.sspark.web.PostUpdateRequestVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
