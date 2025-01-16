@@ -1,7 +1,7 @@
 package com.toy.sspark.service.post;
 
 import com.toy.sspark.domain.post.Post;
-import com.toy.sspark.domain.post.PostRepository;
+import com.toy.sspark.repository.PostRepository;
 import com.toy.sspark.web.vo.PostListResponseVO;
 import com.toy.sspark.web.vo.PostResponseVO;
 import com.toy.sspark.web.vo.PostSaveRequestVO;
