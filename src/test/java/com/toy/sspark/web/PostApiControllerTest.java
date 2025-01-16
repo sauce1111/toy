@@ -2,6 +2,8 @@ package com.toy.sspark.web;
 
 import com.toy.sspark.domain.post.Post;
 import com.toy.sspark.domain.post.PostRepository;
+import com.toy.sspark.web.vo.PostSaveRequestVO;
+import com.toy.sspark.web.vo.PostUpdateRequestVO;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

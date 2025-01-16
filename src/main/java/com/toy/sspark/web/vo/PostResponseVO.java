@@ -1,4 +1,4 @@
-package com.toy.sspark.web;
+package com.toy.sspark.web.vo;
 
 import com.toy.sspark.domain.post.Post;
 import lombok.Getter;

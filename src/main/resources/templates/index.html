@@ -10,6 +10,25 @@
             <a th:href="@{/post/save}" role="button" class="btn btn-primary">게시글 등록</a>
         </div>
     </div>
+    <br>
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>게시글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>최종수정일</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr th:each="post : ${posts}">
+            <td th:text="${post.id}">1</td>
+            <td><a th:href="@{/post/update/{id}(id=${post.id})}" th:text="${post.title}"></a></td>
+            <td th:text="${post.author}">author</td>
+            <td th:text="${#temporals.format(post.updateDate, 'yyyy.MM.dd HH:mm:ss')}">2025.01.01 00:00:00</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <div th:replace="layout/footer :: footer"></div>

@@ -1,6 +1,9 @@
 package com.toy.sspark.web;
 
 import com.toy.sspark.service.post.PostService;
+import com.toy.sspark.web.vo.PostResponseVO;
+import com.toy.sspark.web.vo.PostSaveRequestVO;
+import com.toy.sspark.web.vo.PostUpdateRequestVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
