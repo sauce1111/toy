@@ -1,5 +1,7 @@
 package com.toy.sspark.web;
 
+import com.toy.sspark.configure.security.auth.LoginUser;
+import com.toy.sspark.configure.security.auth.SessionUser;
 import com.toy.sspark.service.post.PostService;
 import com.toy.sspark.web.vo.PostListResponseVO;
 import com.toy.sspark.web.vo.PostResponseVO;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -18,11 +21,16 @@ import java.util.List;
 public class IndexController {
 
     private final PostService postService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         List<PostListResponseVO> postListResponseVOS = postService.findAllDesc();
         model.addAttribute("posts", postListResponseVOS);
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
 
         return "index";
     }

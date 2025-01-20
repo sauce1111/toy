@@ -1,4 +1,4 @@
-package com.toy.sspark.configure.security;
+package com.toy.sspark.configure.security.auth;
 
 import com.toy.sspark.domain.user.User;
 import lombok.Getter;
